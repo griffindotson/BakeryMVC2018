@@ -1,0 +1,26 @@
+﻿@model IEnumerable<BakeryMVC2018.Models.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron">
+    <h1>Menu</h1>
+
+</div>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.ProductName)</th>
+            <th>@Html.DisplayNameFor(model => model.ProductPrice)</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => item.ProductName)</td>
+                <td>@Html.DisplayFor(model => item.ProductPrice)</td>
+            </tr>
+        }
+    </table>
+</div>
+
