@@ -251,6 +251,7 @@
     <Content Include="Views\Register\Confirmation.cshtml" />
     <Content Include="Views\Sale\Index.cshtml" />
     <Content Include="Views\Sale\Purchase.cshtml" />
+    <Content Include="Views\Sale\Receipt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

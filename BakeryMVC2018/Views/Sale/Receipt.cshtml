@@ -1,0 +1,97 @@
+﻿@model BakeryMVC2018.Models.Order
+
+@{
+    String GlazedDonut = "";
+    String MapleBar = "";
+    String CinnamonRoll = "";
+    String Brownie = "";
+    String Danish = "";
+    String DripCoffee = "";
+    String Americano = "";
+    String Latte = "";
+    String SliceOfPie = "";
+    String DeliSandwhich = "";
+    double total = 0.00;
+}
+
+@if (Model.GlazedDonut_Quantity != 0)
+{
+    double price = 1.00 * Model.GlazedDonut_Quantity;
+    total += price;
+    GlazedDonut = Model.GlazedDonut_Quantity + " Glazed Donut(s) $" + price + "\n";
+}
+
+@if (Model.MapleBar_Quantity != 0)
+{
+    double price = 1.25 * Model.MapleBar_Quantity;
+    total += price;
+    MapleBar = Model.MapleBar_Quantity + " Maple Bar(s) $" + price + "\n";
+}
+
+@if (Model.CinnamonRoll_Quantity != 0)
+{
+    double price = 2.25 * Model.CinnamonRoll_Quantity;
+    total += price;
+    CinnamonRoll = Model.CinnamonRoll_Quantity + " Cinnamon Roll(s) $" + price + "\n";
+}
+
+@if (Model.Brownie_Quantity != 0)
+{
+    double price = 2.25 * Model.Brownie_Quantity;
+    total += price;
+    Brownie = Model.Brownie_Quantity + " Brownie(s) $" + price + "\n";
+}
+
+@if (Model.Danish_Quantity != 0)
+{
+    double price = 3.15 * Model.Danish_Quantity;
+    total += price;
+    Danish = Model.Danish_Quantity + " Danish(s) $" + price + "\n";
+}
+
+@if (Model.DripCoffee_Quantity != 0)
+{
+    double price = 1.25 * Model.DripCoffee_Quantity;
+    total += price;
+    DripCoffee = Model.DripCoffee_Quantity + " Drip Coffee(s) $" + price + "\n";
+}
+
+@if (Model.Americano_Quantity != 0)
+{
+    double price = 2.00 * Model.Americano_Quantity;
+    total += price;
+    Americano = Model.Americano_Quantity + " Americano(s) $" + price + "\n";
+}
+
+@if (Model.Latte_Quantity != 0)
+{
+    double price = 3.00 * Model.Latte_Quantity;
+    total += price;
+    Latte = Model.Latte_Quantity + " Latte(s) $" + price + "\n";
+}
+
+@if (Model.SliceOfPie_Quantity != 0)
+{
+    double price = 3.00 * Model.SliceOfPie_Quantity;
+    total += price;
+    SliceOfPie = Model.SliceOfPie_Quantity + " Slice(s) Of Pie $" + price + "\n";
+}
+
+@if (Model.DeliSandwhich_Quantity != 0)
+{
+    double price = 3.00 * Model.DeliSandwhich_Quantity;
+    total += price;
+    DeliSandwhich = Model.DeliSandwhich_Quantity + " DeliSandwhich(s) $" + price + "\n";
+}
+
+@{
+    ViewBag.Title = "Receipt";
+}
+
+<h2>Receipt</h2>
+<p>
+    <%= GlazedDonut %><%=MapleBar %><%=CinnamonRoll %><%=Brownie %>
+    <%=Danish %><%=DripCoffee %><%=Americano %><%=Latte %>
+    <%=SliceOfPie %><%=DeliSandwhich %>
+</p>
+<p>Total: $ <%=SliceOfPie %></p>
