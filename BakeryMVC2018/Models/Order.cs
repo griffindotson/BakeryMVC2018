@@ -7,6 +7,8 @@ namespace BakeryMVC2018.Models
 {
     public class Order
     {
+        public string Email { get; set; }
+        public string Phone { get; set; }
         public int GlazedDonut_Quantity { get; set; }
         public int MapleBar_Quantity { get; set; }
         public int CinnamonRoll_Quantity { get; set; }

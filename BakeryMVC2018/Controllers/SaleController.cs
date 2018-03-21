@@ -28,20 +28,21 @@ namespace BakeryMVC2018.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include = "email,  phone")]Customer person)
-        {
-           
-
-            return View("Purchase");
-
-        }
-
-        public ActionResult Purchase([Bind(Include = "GlazedDonut_Quantity, MapleBar_Quantity," +
+       
+        public ActionResult Index([Bind(Include = "email,  phone,"+
+             "GlazedDonut_Quantity, MapleBar_Quantity," +
             "CinnamonRoll_Quantity, Brownie_Quantity, Danish_Quantity," +
-            "DripCoffee_Quantity, Americano_Quantity, Latte_Quantity, SliceOfPie_Quantity, DeliSandwhich_Quantity")]Order ord)
+            "DripCoffee_Quantity, Americano_Quantity, Latte_Quantity, SliceOfPie_Quantity, DeliSandwhich_Quantity")]Order person)
         {
-            
-            return View("Receipt", ord);
+            if(Session["shopper"] == null)
+            {
+                Session["shopper"] = person.Email;
+                return View("Purchase");
+            }
+            else
+            {
+                return View("receipt", person);
+            }          
         }
     }
 }

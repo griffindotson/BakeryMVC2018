@@ -18,7 +18,8 @@
 {
     double price = 1.00 * Model.GlazedDonut_Quantity;
     total += price;
-    GlazedDonut = Model.GlazedDonut_Quantity + " Glazed Donut(s) $" + price + "\n";
+    GlazedDonut = Model.GlazedDonut_Quantity + " Glazed Donut(s) $" + price;
+    
 }
 
 @if (Model.MapleBar_Quantity != 0)
@@ -90,8 +91,7 @@
 
 <h2>Receipt</h2>
 <p>
-    <%= GlazedDonut %><%=MapleBar %><%=CinnamonRoll %><%=Brownie %>
-    <%=Danish %><%=DripCoffee %><%=Americano %><%=Latte %>
-    <%=SliceOfPie %><%=DeliSandwhich %>
+    @GlazedDonut @MapleBar @CinnamonRoll @Brownie 
+    @Danish @DripCoffee @Americano @Latte @SliceOfPie @DeliSandwhich
 </p>
-<p>Total: $ <%=SliceOfPie %></p>
+<p>Total: $ @total</p>
